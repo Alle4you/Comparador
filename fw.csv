@@ -1,0 +1,43 @@
+﻿Fabricante;modelo;Throughput(HTTP)GB;Throughput(APPMIX)GB;Threat Prevention(HTTP)GB;Threat Prevention(APPMIX)GB;IPsec VPN throughput MB;Max session;New sessions per second;max VSYS;interface RJ45;interface SFP;Interface SFP+;interface SFP28;Interface QSFP+;storage GB;fonte redundante
+Checkpoint;3600;0;1,5;0;0,78;2710;2000000;32000;5;6;0;0;0;0;240;não 
+Checkpoint;6200;0;3,72;0;1,8;2570;2000000;67000;10;10;opcional 4;opcional 4;0;0;240;opcional
+Checkpoint;6600;0;62;0;3,7;4900;2000000;116000;10;10;opcional 4;opcional 4;0;0;240;opcional
+Checkpoint;6900;0;17;0;7,4;9810;4000000;230000;10;10;opcional 4;opcional 4;0;opcional 4;480;opcional
+Checkpoint;16200;0;27;0;15;20000;8000000;435000;60;10;opcional 16;opcional 16;opcional 8;opcional 8;480;opcional
+Checkpoint;26000;0;40,5;0;24;40100;10000000;550000;125;10;opcional 32;opcional 16;opcional 16;opcional 16;480;opcional
+Checkpoint;28600;0;51,5;0;30;44000;49000000;590000;250;2;opcional 32;opcional 32;opcional 16;opcional 16;480;opcional
+Fortigate;60F;6;1;0;0,7;6500;700000;35000;licença;10;0;0;0;0;128;não
+Fortigate;100F;10;1,6;0;1;11500;1500000;56000;licença;22;4;2;0;0;480;nativo
+Fortigate;400F;70;3,5;0;9;55000;7800000;500000;licença;16;8;4;0;0;480;opcional
+Fortigate;600F;70;11,5;0;10,5;55000;8000000;550000;licença;16;8;4;4;0;480;opcional
+Fortigate;1000F;134;15;0;13;55000;7500000;650000;licença;8;8;8;8;2;960;opcional
+Fortigate;1800F;140;17;0;15;55000;12000000;750000;licença;18;8;2;12;4;2tb;opcional
+Fortigate;2200E;100;13,5;0;11;98000;24000000;500000;licença;14;0;0;20;4;2tb;opcional
+Fortigate;3000F;221;34;0;33;105000;70000000;870000;licença;20;0;0;16;6;2tb;opcional
+Fortigate;3700F;420;80;0;75;160000;140000000;930000;licença;2;0;0;24;4;4tb;opcional
+Fortigate;4200F;400;47;0;45;210000;210000000;1000000;licença;2;0;0;18;8;4tb;opcional
+Palo Alto;PA-220R;0,545;0,535;0,265;0,32;550;64000;4200;0;6;2;0;0;0;32;opcional
+Palo Alto;PA-220 ;0,545;0,535;0,265;0,32;550;64000;4200;0;8;0;0;0;0;32;opcional
+Palo Alto;PA-410;1,6;1,2;0,6;0,685;930;64000;12000;0;7;0;0;0;0;64;opcional
+Palo Alto;PA-415;1,6;1,2;0,6;0,685;930;64000;12000;0;8;1;0;0;0;128;opcional
+Palo Alto;PA-440;2,9;2,2;0,9;1;1700;200000;37000;0;8;0;0;0;0;128;opcional
+Palo Alto;PA-445;2,9;2,2;0,9;1;1700;200000;3700;0;8;1;0;0;0;128;opcional
+Palo Alto;PA-450;3,6;3;1,4;1,6;2200;300000;5100;0;8;0;0;0;0;128;opcional
+Palo Alto;PA-460;5,1;4,4;2,1;2,4;3000;400000;73000;0;8;0;0;0;0;128;opcional
+Palo Alto;PA-820;1,8;1,7;0,87;0,9;1400;128000;8100;0;4;4;opcional 4;0;0;240;opcional
+Palo Alto;PA-850;2,2;2,1;1;1,2;1700;192000;13100;0;4;8;0;0;0;240;Não
+Palo Alto;PA-3220;4,3;4,8;2,1;2,6;2600;1000000;52800;6;12;4;4;0;0;240;opcional
+Palo Alto;PA-3250;5,3;5,8;2,6;3,1;2900;2000000;63700;6;12;8;opcional 8;0;0;240;opcional
+Palo Alto;PA-3260;7,8;8,7;3,9;4,7;4700;2200000;94400;6;12;8;opcional 8;0;4;240;opcional
+Palo Alto;PA-3410;14,5;11,6;5,2;5,9;6800;1400000;145000;11;12;10;opcional 10;4;0;480;opcional
+Palo Alto;PA-3420;20,8;16,9;7,6;8,7;9900;2000000;205000;11;12;10;opcional 10;4;0;480;opcional
+Palo Alto;PA-3430;25,5;20,5;9,2;10,5;12200;2500000;240000;11;12;10;opcional 10;4;2;480;opcional
+Palo Alto;PA-3440;30,2;24;11;12,8;14500;3000000;268000;11;12;10;opcional 10;4;2;480;opcional
+Palo Alto;PA-5220;13,9;15,6;7,1;8,8;9500;4000000;155000;20;4;16;opcional 16;0;4;240/1T;opcional
+Palo Alto;PA-5250;32,8;36,7;16,9;21,4;18400;8000000;368000;125;4;16;opcional 16;4;4;240/1T;opcional
+Palo Alto;PA-5260;49,5;55,2;25,4;31,4;26300;32000000;505000;225;4;16;opcional 16;4;4;240/1T;opcional
+Palo Alto;PA-5280;49,5;55,2;25,4;31,4;26300;64000000;505000;225;4;16;opcional 16;4;4;240/1T;opcional
+Palo Alto;PA-5410;56,2;39;22,5;24,8;21000;3600000;295000;20;8;12;opcional 12;4;4;480;opcional
+Palo Alto;PA-5420;59,5;51,1;29,5;32;28700;5000000;370000;65;8;12;opcional 12;4;4;480;opcional
+Palo Alto;PA-5430;74;60;42;44,5;42000;7200000;370000;125;8;12;opcional 12;4;4;480;opcional
+Palo Alto;PA-5440;93;72;56,5;52;58000;12000000;380000;225;8;12;opcional 12;4;4;480;opcional
