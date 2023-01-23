@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  comparador:
+    image: comparador
+    build:
+      context: .
+      dockerfile: ./Dockerfile
