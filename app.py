@@ -17,6 +17,13 @@ modelo_fg = _fg['modelo']
 
 #setup da Pagina WEB
 st.set_page_config(page_title="Firewall compare tool", layout="wide")
+#esconde menu hamburguer
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 
 #setup da Sidebar com filtros
