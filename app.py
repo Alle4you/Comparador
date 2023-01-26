@@ -1,9 +1,19 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 
 
 
-df = pd.read_csv('fw.csv', sep=';',keep_default_na=False)
+#lendo o arquivo com dados local
+#df = pd.read_csv('fw.csv', sep=';',keep_default_na=False)
+#lendo o arquivo com dados no google sheets
+df = pd.read_csv('https://docs.google.com/spreadsheets/d/1FesrY4LztyBAolgBuQbi_XwcIhspMffjzfOoLJfzRjI/export?format=csv')
+
+#tratamento de caractere separador da planillha de "," para "." para float
+df['Throughput(HTTP)GB'] = df['Throughput(HTTP)GB'].str.replace(",",".").astype(float)
+df['Throughput(APPMIX)GB'] = df['Throughput(APPMIX)GB'].str.replace(",",".").astype(float)
+df['Threat Prevention(HTTP)GB'] = df['Threat Prevention(HTTP)GB'].str.replace(",",".").astype(float)
+df['Threat Prevention(APPMIX)GB'] = df['Threat Prevention(APPMIX)GB'].str.replace(",",".").astype(float)
 
 #Filtrando Fabricantes e modelos
 _pa= df.loc[df['Fabricante'] == 'Palo Alto']
@@ -17,14 +27,12 @@ modelo_fg = _fg['modelo']
 
 #setup da Pagina WEB
 st.set_page_config(page_title="Firewall compare tool", layout="wide")
-#esconde menu hamburguer
 hide_menu_style = """
         <style>
         #MainMenu {visibility: hidden;}
         </style>
         """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
-
 
 #setup da Sidebar com filtros
 st.sidebar.header("FW DATASHEET compare tool: ")
@@ -41,28 +49,54 @@ model_ck = st.sidebar.selectbox("Selecione o Modelo Checkpoint: ",
 model_fg = st.sidebar.selectbox('Selecione o Modelo Fortigate',
                                 options= modelo_fg)
 
-#tabela que será apresntada na pagina central
+#tabela que será apresentada na pagina central
 select = df.query("modelo == @model_pa")
 select_ck = df.query("modelo == @model_ck" )
 select_fg = df.query("modelo == @model_fg")
 
-#combinado as tabelas
+#combinado as tabelas para apresentação final
 select_all = select.merge(select_ck, how = 'outer').merge(select_fg, how ='outer')
 #df_conbine = pd.merge(select, select_ck, select_fg, how = 'outer')
 
 #adiciona o fabricante como index
-df_conbine = select_all.set_index('Fabricante')
+df_combine = select_all.set_index('Fabricante')
 
 #adiciona grafico com trhoughput
 #primeiro filtra colunas com info sobre troughtput
-df_bar = select_all[['Fabricante',
-                    'modelo',
+df_barx = select_all[['Fabricante',
                     'Throughput(HTTP)GB',
                     'Throughput(APPMIX)GB',
                     'Threat Prevention(HTTP)GB',
                     'Threat Prevention(APPMIX)GB'
                     ]]
+fig = px.bar(df_barx, x="Fabricante", 
+             y=['Throughput(HTTP)GB',
+            'Throughput(APPMIX)GB',
+            'Threat Prevention(HTTP)GB',
+            'Threat Prevention(APPMIX)GB'
+            ],barmode='group',
+            text_auto=True,
+            labels={'value':'Throughput em GB'})
+
+fig.update_layout(
+    legend=dict(
+        x=0,
+        y=1.0,
+        orientation='h',
+        yanchor='bottom',
+        xanchor='left',
+        bgcolor='rgba(255, 255, 255, 0)',
+        bordercolor='rgba(255, 255, 255, 0)'
+    ),
+    barmode='group',
+    legend_title_text='',
+    bargap=0.15, # gap between bars of adjacent location coordinates.
+    bargroupgap=0.1 # gap between bars of the same location coordinate.
+)
+config = {'displayModeBar': False}
+
+st.plotly_chart(fig,config=config)
 
 
 #apresntação do dataframe T inverte linhas para colunas
-st.dataframe(df_conbine.T, use_container_width=True)
+st.dataframe(df_combine.T, use_container_width=True)
