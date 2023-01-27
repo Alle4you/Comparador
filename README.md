@@ -2,7 +2,7 @@
 
 App Desenvolvido em Streamlit com opção DOCKER.
 
-objetivo é comparar rapidamento datasheets de equipamentos de firewall dos fabricantes Fortigate, Checkpoint e Palo Alto.
+objetivo é comparar rapidamente datasheets de equipamentos de firewall dos fabricantes Fortigate, Checkpoint e Palo Alto.
 
 LIB:
 Pandas 
