@@ -14,3 +14,6 @@ streamlit run app.py no diretorio
 
 comando para iniciar o docker
 docker run -p 80:8501 {nome da imagem}
+
+Os dados são alimentados na planilha dentro do google sheets
+https://docs.google.com/spreadsheets/d/1FesrY4LztyBAolgBuQbi_XwcIhspMffjzfOoLJfzRjI/edit?usp=sharing
