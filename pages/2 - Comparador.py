@@ -1,6 +1,38 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 import pandas as pd
 import plotly.express as px
+
+# 1 - setup da Pagina WEB
+st.set_page_config(page_title="Firewall Handler", layout="wide")
+# hide_menu_style = """
+#         <style>
+#         #MainMenu {visibility: hidden;}
+#         </style>
+#         """
+# st.markdown(hide_menu_style, unsafe_allow_html=True)
+
+
+# 2.1 - montando o main menu com sidebar
+# with st.sidebar:
+#     selected = option_menu(
+#         menu_title= 'Main Menu', #item requerido, para remover adicionar 'none'
+#         options = ['Comparador', 'Dimensionador', 'Noticias'],
+#         icons = ['bar-chart-fill', 'basket', 'book'], # buscar no site bootstrap o nome dos icones https://icons.getbootstrap.com/
+#         menu_icon = 'cast',
+#         default_index= 0,
+#         orientation= 'none'
+#     )
+# 2.2- opção de main menu on top page horizontal
+# selected = option_menu(
+#     menu_title= None, #item requerido, para remover adicionar 'none'
+#     options = ['Comparador', 'Dimensionador', 'Noticias'],
+#     icons = ['bar-chart-fill', 'basket', 'book'], # buscar no site bootstrap o nome dos icones https://icons.getbootstrap.com/
+#     menu_icon = 'cast',
+#     default_index= 0,
+#     orientation= 'horizontal'
+# )
+
 
 
 
@@ -25,14 +57,7 @@ modelo_ck = _ck['modelo']
 _fg = df.loc[df['Fabricante'] == 'Fortigate']
 modelo_fg = _fg['modelo']
 
-#setup da Pagina WEB
-st.set_page_config(page_title="Firewall compare tool", layout="wide")
-hide_menu_style = """
-        <style>
-        #MainMenu {visibility: hidden;}
-        </style>
-        """
-st.markdown(hide_menu_style, unsafe_allow_html=True)
+
 
 #setup da Sidebar com filtros
 st.sidebar.header("FW DATASHEET compare tool: ")
