@@ -5,12 +5,13 @@ import plotly.express as px
 
 # 1 - setup da Pagina WEB
 st.set_page_config(page_title="Firewall Handler", layout="wide")
-# hide_menu_style = """
-#         <style>
-#         #MainMenu {visibility: hidden;}
-#         </style>
-#         """
-# st.markdown(hide_menu_style, unsafe_allow_html=True)
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 
 # 2.1 - montando o main menu com sidebar
